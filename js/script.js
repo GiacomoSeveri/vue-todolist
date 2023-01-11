@@ -30,6 +30,9 @@ const app = Vue.createApp({
             } else if(this.tasks[currentIndex].done = true) {
                 this.tasks[currentIndex].done = false;
             }
+        },
+        deleteTask(currentIndex){
+            this.tasks.splice(currentIndex, 1);
         }
     }
 });

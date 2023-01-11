@@ -30,9 +30,9 @@
                 <button class="btn btn-outline-success" type="button">Aggiungi</button>
             </div>
             <ul class="list-group" role="button">
-                <li v-for="(task, i) in tasks" @click="deed(i)" :class="task.done === true ? 'text-decoration-line-through' : ''" class="list-group-item d-flex justify-content-between">
-                    {{ task.name }}
-                    <button type="button" class="btn-close"></button>
+                <li v-for="(task, i) in tasks" class="list-group-item d-flex justify-content-between">
+                    <span @click="deed(i)" :class="task.done === true ? 'text-decoration-line-through' : ''">{{ task.name }}</span>
+                    <button type="button" class="btn-close" @click="deleteTask(i)"></button>
                 </li>
                 
             </ul>
