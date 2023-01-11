@@ -25,7 +25,7 @@ const app = Vue.createApp({
     },
     methods: {
         deed(){
-            this.done = 'true';
+            this.tasks.done = 'true';
         }
     }
 });
