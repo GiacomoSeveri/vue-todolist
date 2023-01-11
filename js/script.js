@@ -3,6 +3,7 @@
 const app = Vue.createApp({
     data(){
         return{
+            // otherTask: '',
             newTask: '',
             tasks: [
                 {
@@ -26,7 +27,6 @@ const app = Vue.createApp({
     },
     methods: {
         addTask(){
-            this.newTask = {task: this.newTask, done: false};
             this.tasks.push(this.newTask);
         },
         deed(currentIndex){
