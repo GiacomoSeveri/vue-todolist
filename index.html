@@ -26,8 +26,8 @@
     <main class="mt-5">
         <div class="container w-50" id="root">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Aggiungi compito">
-                <button class="btn btn-outline-success" type="button">Aggiungi</button>
+                <input type="text" class="form-control" placeholder="Aggiungi un compito" v-model="newTask">
+                <button class="btn btn-outline-success" type="button" @click="addTask">Aggiungi</button>
             </div>
             <ul class="list-group" role="button">
                 <li v-for="(task, i) in tasks" class="list-group-item d-flex justify-content-between">
@@ -40,6 +40,3 @@
     </main>
 </body> 
 </html>
-
-<!-- :class="i === currentIndex ? 'active' : ''" -->
-<!-- class="list-group-item d-flex justify-content-between" -->

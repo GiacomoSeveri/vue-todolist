@@ -3,6 +3,7 @@
 const app = Vue.createApp({
     data(){
         return{
+            newTask: '',
             tasks: [
                 {
                     name: 'Fare la spesa',
@@ -24,6 +25,10 @@ const app = Vue.createApp({
         }
     },
     methods: {
+        addTask(){
+            this.newTask = {task: this.newTask, done: false};
+            this.tasks.push(this.newTask);
+        },
         deed(currentIndex){
             if(this.tasks[currentIndex].done === false) {
                 this.tasks[currentIndex].done = true;
