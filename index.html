@@ -16,6 +16,7 @@
 
     <!-- js -->
     <script defer src="js/script.js"></script>
+
     <title>Document</title>
 </head>
 <body>
@@ -26,16 +27,19 @@
         <div class="container w-50" id="root">
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Aggiungi compito">
-                <button class="btn btn-outline-secondary" type="button">Aggiungi</button>
+                <button class="btn btn-outline-success" type="button">Aggiungi</button>
             </div>
-            <ul class="list-group">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-                <li class="list-group-item">A fourth item</li>
-                <li class="list-group-item">And a fifth one</li>
+            <ul class="list-group" role="button">
+                <li v-for="t in tasks"  @click="deed()" :class="t.done === true ? 'text-decoration-line-through' : ''">
+                    {{ t.task }}
+                    <button type="button" class="btn-close"></button>
+                </li>
+                
             </ul>
         </div>
     </main>
 </body> 
 </html>
+
+<!-- :class="i === currentIndex ? 'active' : ''" -->
+<!-- class="list-group-item d-flex justify-content-between" -->
