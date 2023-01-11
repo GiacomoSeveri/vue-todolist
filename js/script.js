@@ -1,33 +1,37 @@
-console.log('vue ok', Vue)
+// console.log('vue ok', Vue)
 
 const app = Vue.createApp({
     data(){
         return{
             tasks: [
                 {
-                    task: 'Fare la spesa',
-                    done: 'folse'
+                    name: 'Fare la spesa',
+                    done: false
                 },
                 {
-                    task: 'Lavare la macchina',
-                    done: 'folse'
+                    name: 'Lavare la macchina',
+                    done: false
                 },
                 {
-                    task: 'Fare il ragù',
-                    done: 'folse'
+                    name: 'Fare il ragù',
+                    done: false
                 },
                 {
-                    task: 'Mettere apposto le legne',
-                    done: 'folse'
+                    name: 'Mettere apposto le legne',
+                    done: false
                 },
             ]
         }
     },
     methods: {
-        deed(){
-            this.tasks.done = 'true';
+        deed(currentIndex){
+            if(this.tasks[currentIndex].done === false) {
+                this.tasks[currentIndex].done = true;
+            } else if(this.tasks[currentIndex].done = true) {
+                this.tasks[currentIndex].done = false;
+            }
         }
     }
 });
 
-app.mount('#root')
+app.mount('#root');

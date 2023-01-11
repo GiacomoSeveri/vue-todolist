@@ -30,8 +30,8 @@
                 <button class="btn btn-outline-success" type="button">Aggiungi</button>
             </div>
             <ul class="list-group" role="button">
-                <li v-for="t in tasks"  @click="deed()" :class="t.done === true ? 'text-decoration-line-through' : ''">
-                    {{ t.task }}
+                <li v-for="(task, i) in tasks" @click="deed(i)" :class="task.done === true ? 'text-decoration-line-through' : ''" class="list-group-item d-flex justify-content-between">
+                    {{ task.name }}
                     <button type="button" class="btn-close"></button>
                 </li>
                 
